@@ -1,3 +1,19 @@
 package com.example.carepets_alpha.database
 
-data class Pet(val name: String, val image: Int, val species: String) {}
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity (tableName = "pet_table")
+data class Pet(
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0,
+
+    @ColumnInfo(name = "pet_name")
+    var name: String = "",
+
+    @ColumnInfo(name = "pet_img")
+    var img: Int = 0,
+
+    @ColumnInfo(name = "pet_specifies")
+    var species: String = "") {}

@@ -7,6 +7,11 @@ android {
     namespace 'com.example.carepets_alpha'
     compileSdk 33
 
+    // view binding: 10/4
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId "com.example.carepets_alpha"
         minSdk 24
@@ -41,4 +46,13 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // navigation: 10/4
+//    val nav_version = "2.5.3"
+    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
+    implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
+
+    // room: 10/4
+    implementation("androidx.room:room-runtime:2.5.1")
+    annotationProcessor("androidx.room:room-compiler:2.5.1")
 }

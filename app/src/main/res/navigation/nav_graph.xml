@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/petListFragment">
+
+    <fragment
+        android:id="@+id/petListFragment"
+        android:name="com.example.carepets_alpha.petlist.PetListFragment"
+        android:label="fragment_pet_list"
+        tools:layout="@layout/fragment_pet_list" >
+        <action
+            android:id="@+id/action_petListFragment_to_petInforFragment"
+            app:destination="@id/petInforFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/petInforFragment"
+        android:name="com.example.carepets_alpha.petinfor.PetInforFragment"
+        android:label="fragment_pet_infor"
+        tools:layout="@layout/fragment_pet_infor" />
+</navigation>
