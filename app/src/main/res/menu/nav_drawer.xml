@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/petListFragment"
+        android:icon="@drawable/ic_pet_list"
+        android:title="@string/petList" />
+    <item
+        android:id="@+id/aboutFragment"
+        android:icon="@drawable/ic_question"
+        android:title="@string/about" />
+</menu>

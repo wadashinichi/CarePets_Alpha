@@ -6,23 +6,23 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(entities = [Pet::class], version = 1)
-abstract class AppDatabase : RoomDatabase() {
+abstract class PetsDatabase : RoomDatabase() {
     abstract fun petDao(): PetDao
 
     companion object {
 
         @Volatile
-        private var INSTANCE: AppDatabase? = null
+        private var INSTANCE: PetsDatabase? = null
 
-        fun getInstance(context: Context): AppDatabase {
+        fun getInstance(context: Context): PetsDatabase {
             synchronized(this) {
                 var instance = INSTANCE
 
                 if (instance == null) {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
-                        AppDatabase::class.java,
-                        "sleep_history_database"
+                        PetsDatabase::class.java,
+                        "pet_database"
                     )
                         .fallbackToDestructiveMigration()
                         .build()

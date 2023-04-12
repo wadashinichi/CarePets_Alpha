@@ -28,7 +28,7 @@ class PetListAdapter(var listData: List<Pet>) : RecyclerView.Adapter<PetListAdap
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var item = listData[position]
-        holder.img.setImageResource(item.image)
+        holder.img.setImageResource(item.img)
         holder.name.text = item.name
         holder.species.text = item.species
     }

@@ -16,4 +16,9 @@ data class Pet(
     var img: Int = 0,
 
     @ColumnInfo(name = "pet_specifies")
-    var species: String = "") {}
+    var species: String = "") {
+
+    override fun toString(): String {
+        return "Just input: id: $id - name: $name "
+    }
+}
