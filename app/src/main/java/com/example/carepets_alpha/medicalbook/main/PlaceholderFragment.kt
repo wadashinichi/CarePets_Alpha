@@ -1,4 +1,4 @@
-package com.example.carepets_alpha.ui.main
+package com.example.carepets_alpha.medicalbook.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.carepets_alpha.R
-import com.example.carepets_alpha.databinding.FragmentMainBinding
+import com.example.carepets_alpha.databinding.FragmentTabBinding
 
 /**
  * A placeholder fragment containing a simple view.
@@ -17,7 +16,8 @@ import com.example.carepets_alpha.databinding.FragmentMainBinding
 class PlaceholderFragment : Fragment() {
 
     private lateinit var pageViewModel: PageViewModel
-private var _binding: FragmentMainBinding? = null
+    private var _binding: FragmentTabBinding? = null
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -30,17 +30,17 @@ private var _binding: FragmentMainBinding? = null
     }
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
 
-      _binding = FragmentMainBinding.inflate(inflater, container, false)
-      val root = binding.root
+        _binding = FragmentTabBinding.inflate(inflater, container, false)
+        val root = binding.root
 
-        val textView: TextView = binding.sectionLabel
-        pageViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+//        val textView: TextView = binding.sectionLabel
+//        pageViewModel.text.observe(viewLifecycleOwner, Observer {
+//            textView.text = it
+//        })
         return root
     }
 
@@ -65,7 +65,7 @@ private var _binding: FragmentMainBinding? = null
         }
     }
 
-override fun onDestroyView() {
+    override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }

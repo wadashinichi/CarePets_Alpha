@@ -25,12 +25,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        drawerLayout = binding.drawerLayout
+//        drawerLayout = binding.drawerLayout
 //
-        val navController = findNavController(R.id.nav_host_fragment)
-////        replaceFragment(PetInforFragment())
-        NavigationUI.setupWithNavController(binding.navDrawer, navController)
-        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+//        val navController = findNavController(R.id.nav_host_fragment)
+        replaceFragment(PetInforFragment())
+//        NavigationUI.setupWithNavController(binding.navDrawer, navController)
+//        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
     }
 
     private fun replaceFragment(fragment: Fragment) {

@@ -8,29 +8,32 @@ import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import com.example.carepets_alpha.ui.main.SectionsPagerAdapter
-import com.example.carepets_alpha.databinding.ActivityMain2Binding
+import com.example.carepets_alpha.databinding.ActivityTabBinding
+import com.example.carepets_alpha.medicalbook.main.SectionsPagerAdapter
 
-class MainActivity2 : AppCompatActivity() {
+class TabActivity : AppCompatActivity() {
 
-private lateinit var binding: ActivityMain2Binding
+    private lateinit var binding: ActivityTabBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-     binding = ActivityMain2Binding.inflate(layoutInflater)
-     setContentView(binding.root)
+        binding = ActivityTabBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
         val viewPager: ViewPager = binding.viewPager
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = binding.tabs
         tabs.setupWithViewPager(viewPager)
+
+
+
         val fab: FloatingActionButton = binding.fab
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+                .setAction("Action", null).show()
         }
     }
 }

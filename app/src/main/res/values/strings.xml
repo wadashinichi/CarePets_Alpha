@@ -14,8 +14,13 @@
     <!-- drawer   -->
     <string name="petList">Pets List</string>
     <string name="about">About us</string>
+
+    // medical book
     <string name="title_activity_tab">TabActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
     <string name="title_activity_main2">MainActivity2</string>
+    <string name="tab_text_1">Overview</string>
+    <string name="tab_text_2">Vaccination</string>
+    <string name="tab_text_3">Prescription</string>
+    <string name="tab_text_4">Note</string>
+
 </resources>

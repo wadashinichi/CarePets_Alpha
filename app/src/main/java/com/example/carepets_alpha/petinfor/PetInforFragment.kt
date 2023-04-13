@@ -28,8 +28,8 @@ class PetInforFragment : Fragment() {
 //            inflater.context, AppDatabase::class.java, "AppDatabase"
 //        ).build()
 
-//        val db: PetsDatabase = Room.databaseBuilder(inflater.context, PetsDatabase::class.java, "pet_database")
-//            .build()
+        val db: PetsDatabase = Room.databaseBuilder(inflater.context, PetsDatabase::class.java, "pet_database")
+            .build()
 //        val petDao: PetDao
 
         binding.btnSubmit.setOnClickListener {
