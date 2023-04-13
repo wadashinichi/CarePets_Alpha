@@ -38,4 +38,9 @@
         android:label="AboutFragment"
         tools:layout="@layout/fragment_about"
         />
+    <activity
+        android:id="@+id/petListActivity"
+        android:name="com.example.carepets_alpha.PetListActivity"
+        android:label="activity_pet_list"
+        tools:layout="@layout/activity_pet_list" />
 </navigation>

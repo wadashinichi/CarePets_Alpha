@@ -10,6 +10,7 @@ import androidx.room.Room
 import com.example.carepets_alpha.R
 import com.example.carepets_alpha.database.Pet
 import com.example.carepets_alpha.database.PetDao
+import com.example.carepets_alpha.database.PetRepository
 import com.example.carepets_alpha.database.PetsDatabase
 import com.example.carepets_alpha.databinding.FragmentPetInforBinding
 
@@ -17,6 +18,7 @@ import com.example.carepets_alpha.databinding.FragmentPetInforBinding
 class PetInforFragment : Fragment() {
 
     private lateinit var binding: FragmentPetInforBinding
+    private lateinit var res: PetRepository
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,10 +29,11 @@ class PetInforFragment : Fragment() {
 //        val db = Room.databaseBuilder(
 //            inflater.context, AppDatabase::class.java, "AppDatabase"
 //        ).build()
-
+//
         val db: PetsDatabase = Room.databaseBuilder(inflater.context, PetsDatabase::class.java, "pet_database")
             .build()
 //        val petDao: PetDao
+//        res = PetRepository()
 
         binding.btnSubmit.setOnClickListener {
             val name: String = binding.editName.text.toString()

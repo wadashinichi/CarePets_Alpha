@@ -2,6 +2,7 @@ package com.example.carepets_alpha
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -9,10 +10,13 @@ import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carepets_alpha.database.Pet
+import com.example.carepets_alpha.database.PetRepository
+import com.example.carepets_alpha.database.PetsDatabase
 import com.example.carepets_alpha.databinding.ActivityMainBinding
 import com.example.carepets_alpha.petinfor.PetInforFragment
 import com.example.carepets_alpha.petlist.PetListAdapter
 import com.example.carepets_alpha.petlist.PetListFragment
+import kotlin.coroutines.jvm.internal.CompletedContinuation.context
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,14 +27,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.fragment_pet_list)
 
 //        drawerLayout = binding.drawerLayout
 //
 //        val navController = findNavController(R.id.nav_host_fragment)
-        replaceFragment(PetInforFragment())
+//        replaceFragment(PetInforFragment())
 //        NavigationUI.setupWithNavController(binding.navDrawer, navController)
 //        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+//        var res = PetRepository(application)
+        var listData: List<Pet> = PetsDatabase.getInstance(application).petDao().getAll()
+
+        val adapter = PetListAdapter(listData)
+        binding.rvPetList.adapter = adapter
+        binding.rvPetList.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+        binding.btnAdd.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_petListFragment_to_petInforFragment)
+//            val navHostFragment = supportFragmentManager
+        }
     }
 
     private fun replaceFragment(fragment: Fragment) {

@@ -25,7 +25,9 @@ abstract class PetsDatabase : RoomDatabase() {
                         "pet_database"
                     )
                         .fallbackToDestructiveMigration()
+                        .allowMainThreadQueries()
                         .build()
+//                        .also { INSTANCE = it }
                     INSTANCE = instance
                 }
                 return instance

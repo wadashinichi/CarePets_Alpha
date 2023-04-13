@@ -9,10 +9,12 @@ import androidx.room.Update
 interface PetDao {
 
     @Insert
-    fun insertPet(pet: Pet)
+    fun insertPet(pet: Pet?)
+
+//    @Query("INSERT ")
 
     @Update
-    fun updatePet(pet: Pet)
+    fun updatePet(pet: Pet?)
 
     @Query("SELECT * FROM pet_table")
     fun getAll(): List<Pet>

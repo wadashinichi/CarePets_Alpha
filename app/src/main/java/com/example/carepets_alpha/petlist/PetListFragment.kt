@@ -23,10 +23,10 @@ class PetListFragment : Fragment(R.layout.fragment_pet_list) {
         binding = FragmentPetListBinding.inflate(layoutInflater)
         //// Inflate the layout for this fragment
 ///        val inflate = inflater.inflate(R.layout.fragment_pet_list, container, false)
-        var listData = mutableListOf<Pet>()
-        listData.add(Pet(0,"dog1", R.drawable.dog1, "dog"))
-        listData.add(Pet(0,"background", R.drawable.background1, "dog and cat"))
-//        var listData: List<Pet> = PetsDatabase.getInstance(inflater.context).petDao().getAll()
+//        var listData = mutableListOf<Pet>()
+//        listData.add(Pet(0,"dog1", R.drawable.dog1, "dog"))
+//        listData.add(Pet(0,"background", R.drawable.background1, "dog and cat"))
+        var listData: List<Pet> = PetsDatabase.getInstance(inflater.context).petDao().getAll()
 
         val adapter = PetListAdapter(listData)
         binding.rvPetList.adapter = adapter
