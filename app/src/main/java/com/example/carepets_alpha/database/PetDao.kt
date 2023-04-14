@@ -11,7 +11,7 @@ interface PetDao {
     @Insert
     fun insertPet(pet: Pet?)
 
-//    @Query("INSERT ")
+
 
     @Update
     fun updatePet(pet: Pet?)
